@@ -11,6 +11,19 @@ The leaderboard will only keep track of the _highest score_ of each player.
 ### Modularity
 - The code is separated in different modules using `.asmdef`
 - You can inspect what projects depend on each other in each `.asmdef` at the `references[]`
+### Modules dependencies
+- `Game.Commons`
+  - `Match.Popups`
+    - `Match.Core.Pausing`
+  - `Match.Bindings`
+  - `Match.Core.Tiles`
+    - `Match.Core.Matching`
+      - `Match.Core.Grid`
+      - `Match.Core.Scoring`
+        - `Match.Core.PlayAgain`
+          - `Match.Core.Leaderboard`
+            - `Match.Core.Board`
+
 ### Data-driven architecture
 - You can configure the behavior of the game with configuration files
 - They are located at `Assets/Content/Configs`
