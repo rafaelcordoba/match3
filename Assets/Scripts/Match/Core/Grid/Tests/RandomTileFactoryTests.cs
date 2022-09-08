@@ -12,8 +12,8 @@ namespace Match.Core.Grid.Tests
     [TestFixture]
     public class RandomTileFactoryTests
     {
-        private int RED_INDEX = 0;
-        private int GREEN_INDEX = 1;
+        private const int RED_INDEX = 0;
+        private const int GREEN_INDEX = 1;
         private RandomTileFactory _randomTileFactory;
         private IRandomAdapter _randomAdapter;
         private IAvailableTilesRepository _availableTilesRepository;

@@ -48,6 +48,10 @@ The leaderboard will only keep track of the _highest score_ of each player.
   - Trigger `BoardPresenter.cs` to show the view tiles
   - Check for player name
 ### Unit testing
+- There are some tests at `Match.Core.Grid.Tests`
+  - `GridInitializerTests.cs`
+  - `GridRefillerTests.cs`
+  - `RandomTileFactoryTests.cs`
 - Most classes should be testable
 - All dependencies are interfaces and easily mockable
 - Single-responsibility was applied as much as possible
