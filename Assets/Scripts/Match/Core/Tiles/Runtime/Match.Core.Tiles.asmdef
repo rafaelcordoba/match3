@@ -1,0 +1,16 @@
+{
+    "name": "Match.Core.Tiles",
+    "references": [
+        "VContainer",
+        "Game.Commons"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

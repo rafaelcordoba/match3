@@ -1,0 +1,99 @@
+using System;
+using Game.Commons.Camera;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+namespace Game.Commons.Input.Touch
+{
+    public class TouchInputController : ITouchInputController
+    {
+        public event Action<TouchInputInfo> TouchStart;
+        public event Action<TouchInputInfo> TouchMove;
+        public event Action<TouchInputInfo> TouchEnd;
+
+        private readonly ICameraAdapter _cameraAdapter;
+        private readonly TouchInputActions _actions;
+        private readonly InputAction _contact;
+        private readonly InputAction _position;
+        private bool _blockingInput;
+
+        public TouchInputController(ICameraAdapter cameraAdapter)
+        {
+            _cameraAdapter = cameraAdapter;
+            _actions = new TouchInputActions();
+            _contact = _actions.Touch.Contact;
+            _position = _actions.Touch.Position;
+        }
+
+        public void Enable()
+        {
+            _actions.Enable();
+            _contact.started += ContactStarted;
+            _contact.canceled += ContactCanceled;
+            _position.performed += PositionPerformed;
+        }
+
+        public void Disable()
+        {
+            _actions.Disable();
+            _contact.started -= ContactStarted;
+            _contact.canceled -= ContactCanceled;
+            _position.performed += PositionPerformed;
+        }
+
+        private void PositionPerformed(InputAction.CallbackContext context)
+        {
+            if (_blockingInput)
+                return;
+            
+            var screenPosition = _position.ReadValue<Vector2>();
+            var touchInputInfo = CreateTouchInputInfo(screenPosition, context.time);
+            TouchMove?.Invoke(touchInputInfo);
+        }
+
+        private void ContactStarted(InputAction.CallbackContext context)
+        {
+            var screenPosition = _position.ReadValue<Vector2>();
+            
+#if UNITY_EDITOR
+            if (screenPosition == Vector2.zero)
+            {
+                // prevent unity editor to send input
+                // when focusing on game view for the first time
+                // because the Vector2 will be (0, 0) on Started
+                _blockingInput = true;
+                return; 
+            }
+#endif
+            
+            var touchInputInfo = CreateTouchInputInfo(screenPosition, context.time);
+            TouchStart?.Invoke(touchInputInfo);
+            _blockingInput = false;
+        }
+
+        private void ContactCanceled(InputAction.CallbackContext context)
+        {
+            if (_blockingInput)
+                return;
+            
+            var screenPosition = _position.ReadValue<Vector2>();
+            var touchInputInfo = CreateTouchInputInfo(screenPosition, context.time);
+            TouchEnd?.Invoke(touchInputInfo);
+        }
+
+        private TouchInputInfo CreateTouchInputInfo(Vector2 screenPosition, double time)
+        {
+            var screenPositionVector3 = new Vector3(
+                screenPosition.x, 
+                screenPosition.y,
+                _cameraAdapter.NearClipPlane);
+            var worldPosition = _cameraAdapter.ScreenToWorldPoint(screenPositionVector3);
+            return new TouchInputInfo
+            {
+                Time = time,
+                ScreenPosition = screenPositionVector3,
+                WorldPosition = worldPosition
+            };
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Match.Core.Leaderboard",
+  "references": [
+    "VContainer",
+    "Unity.TextMeshPro",
+    "Game.Commons",
+    "Match.Popups",
+    "Match.Core.PlayAgain"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

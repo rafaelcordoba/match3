@@ -1,0 +1,25 @@
+{
+    "name": "Match.Core.Board",
+    "references": [
+        "VContainer",
+        "UniTask",
+        "Game.Commons",
+        "Match.Core.Tiles",
+        "Match.Core.Matching",
+        "Match.Core.Leaderboard",
+        "Match.Core.Pausing",
+        "Match.Core.Scoring",
+        "Match.Popups",
+        "Match.Core.Grid",
+        "Match.Core.PlayAgain"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,7 @@
+{
+    "name": "game.commons",
+    "displayName": "Game.Commons",
+    "version": "1.0.0",
+    "dependencies": {
+    }
+}
