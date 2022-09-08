@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.boundfoxstudios.fluentassertions": {
+      "version": "https://github.com/BoundfoxStudios/fluentassertions-unity.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "73575516048ef17c212d93e03517740d429183e8"
+    },
     "com.cysharp.unitask": {
       "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
       "depth": 0,
@@ -192,6 +199,13 @@
         "com.unity.nuget.mono-cecil": "1.10.1"
       },
       "hash": "78948c4aebc3ecb5a27601f35e7c9a1734b939ee"
+    },
+    "net.tnrd.nsubstitute": {
+      "version": "https://github.com/Thundernerd/Unity3D-NSubstitute.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f78892c5e6c6e8a1e1e22dab08754c441511c547"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

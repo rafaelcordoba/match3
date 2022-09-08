@@ -1,6 +1,9 @@
 {
   "dependencies": {
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+    "jp.hadashikick.vcontainer": "https://github.com/rafaelcordoba/VContainer.git?path=VContainer/Assets/VContainer#1.11.0",
+    "net.tnrd.nsubstitute": "https://github.com/Thundernerd/Unity3D-NSubstitute.git",
+    "com.boundfoxstudios.fluentassertions": "https://github.com/BoundfoxStudios/fluentassertions-unity.git#upm",
     "com.unity.collab-proxy": "1.15.18",
     "com.unity.feature.development": "1.0.1",
     "com.unity.ide.rider": "3.0.15",
@@ -13,7 +16,6 @@
     "com.unity.timeline": "1.6.4",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.7.8",
-    "jp.hadashikick.vcontainer": "https://github.com/rafaelcordoba/VContainer.git?path=VContainer/Assets/VContainer#1.11.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",

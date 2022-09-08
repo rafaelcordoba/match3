@@ -1,0 +1,23 @@
+{
+  "name": "Match.Core.Grid.Tests",
+  "references": [
+    "VContainer",
+    "Match.Core.Tiles",
+    "Match.Core.Matching",
+    "Match.Core.Grid",
+    "Game.Commons",
+    "BoundfoxStudios.FluentAssertions"
+  ],
+  "includePlatforms": ["Editor"],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll",
+    "NSubstitute.dll"
+  ],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
