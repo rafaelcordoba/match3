@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a760fe4458a0479090b2b71df76f14b7, type: 3}
   m_Name: LeaderboardRepository
   m_EditorClassIdentifier: 
-  _playerName: 
-  _entries:
+  <DefaultEntries>k__BackingField:
   - PlayerName: Bob
     Points: 600
   - PlayerName: Foo

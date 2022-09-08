@@ -10,9 +10,20 @@ namespace Match.Core.Leaderboard
         public event Action<string> PlayerNameChanged;
         
         private readonly ILeaderboardRepository _repository;
+        private readonly ILeaderboardDefaultData _defaultData;
 
-        public LeaderboardController(ILeaderboardRepository repository)
-            => _repository = repository;
+        public LeaderboardController(ILeaderboardRepository repository, ILeaderboardDefaultData defaultData)
+        {
+            _repository = repository;
+            _defaultData = defaultData;
+            InitializeWithDefaultData();
+        }
+
+        private void InitializeWithDefaultData()
+        {
+            if (_repository.GetEntries() == null)
+                _repository.SetEntries(_defaultData.DefaultEntries);
+        }
 
         public string GetPlayerName()
             => _repository.GetPlayerName();
@@ -45,11 +56,13 @@ namespace Match.Core.Leaderboard
         }
 
         public IEnumerable<LeaderboardEntry> GetEntries()
-            => _repository.GetEntries() == null ? 
-                Array.Empty<LeaderboardEntry>() : 
-                _repository.GetEntries()
+        {
+            return _repository.GetEntries() == null
+                ? Array.Empty<LeaderboardEntry>()
+                : _repository.GetEntries()
                     .Select(ConvertToModel)
                     .OrderByDescending(entry => entry.Points);
+        }
 
         private static LeaderboardEntryEntity ConvertToEntity(LeaderboardEntry entry)
             => new()

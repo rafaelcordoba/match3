@@ -6,7 +6,7 @@ namespace Match.Core.Leaderboard.Repository
     {
         string GetPlayerName();
         void SetPlayerName(string value);
-        IReadOnlyList<LeaderboardEntryEntity> GetEntries();
+        IEnumerable<LeaderboardEntryEntity> GetEntries();
         void SetEntries(IEnumerable<LeaderboardEntryEntity> value);
     }
 }
