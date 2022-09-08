@@ -30,10 +30,7 @@ namespace Match.Core.Pausing.UI.Button
         private void OnPauseButtonClicked()
         {
             _pauseController.Pause();
-            var context = new Dictionary<string, object>
-            {
-                { "showClose", true }
-            };
+            var context = new Dictionary<string, object> { { "showClose", true } };
             _popupController.OpenPopup(PopupType.LeaderboardPopup, context);
             _popupController.PopupClosed += _ => _pauseController.UnPause();
         }

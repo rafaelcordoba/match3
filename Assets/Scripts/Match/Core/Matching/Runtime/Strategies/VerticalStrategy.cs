@@ -16,8 +16,13 @@ namespace Match.Core.Matching.Strategies
         public IReadOnlyList<Tile> GetMatches(Tile origin)
         {
             var matchingTiles = new List<Tile> { origin };
+            SearchDown(origin, matchingTiles);
+            SearchUp(origin, matchingTiles);
+            return matchingTiles;
+        }
 
-            // search down
+        private void SearchDown(Tile origin, List<Tile> matchingTiles)
+        {
             var searchY = origin.GridPosition.Y;
             while (searchY > 0)
             {
@@ -28,9 +33,11 @@ namespace Match.Core.Matching.Strategies
                     break;
                 matchingTiles.Add(neighbour);
             }
-            
-            // search up
-            searchY = origin.GridPosition.Y;
+        }
+
+        private void SearchUp(Tile origin, List<Tile> matchingTiles)
+        {
+            var searchY = origin.GridPosition.Y;
             while (searchY < _grid.Height - 1)
             {
                 searchY++;
@@ -40,8 +47,6 @@ namespace Match.Core.Matching.Strategies
                     break;
                 matchingTiles.Add(neighbour);
             }
-
-            return matchingTiles;
         }
     }
 }

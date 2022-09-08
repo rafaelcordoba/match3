@@ -16,14 +16,10 @@ namespace Match.Core.Tiles
         }
 
         public TileView GetTileViewPrefab()
-        {
-            return _tilesConfiguration.TileViewPrefab;
-        }
+            => _tilesConfiguration.TileViewPrefab;
 
         public GraphicView GetGraphicPrefab(TileType tileType)
-        {
-            return _cache[tileType];
-        }
+            => _cache[tileType];
 
         private void CacheData(ITilesConfiguration tilesConfiguration)
         {

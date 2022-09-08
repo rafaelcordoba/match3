@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Game.Commons.Grid;
-using Match.Core.Matching.Strategies;
 using Match.Core.Tiles;
 
 namespace Match.Core.Matching
@@ -29,11 +27,7 @@ namespace Match.Core.Matching
                     continue;
                 
                 var matchingTiles = _matcher.Get(tile);
-                foreach (var matchingTile in matchingTiles)
-                {
-                    matchingTile.Destroyed = true;
-                    _grid.SetItem(matchingTile.GridPosition, null);
-                }
+                DestroyTiles(matchingTiles);
 
                 if (matchingTiles.Count < 1) 
                     continue;
@@ -42,6 +36,15 @@ namespace Match.Core.Matching
                 TilesDestroyed?.Invoke(matchingTiles.Count);
             }
             return tilesWereDestroyed;
+        }
+
+        private void DestroyTiles(IEnumerable<Tile> matchingTiles)
+        {
+            foreach (var matchingTile in matchingTiles)
+            {
+                matchingTile.Destroyed = true;
+                _grid.SetItem(matchingTile.GridPosition, null);
+            }
         }
     }
 }

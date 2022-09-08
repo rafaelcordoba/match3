@@ -13,9 +13,7 @@ namespace Match.Core.Pausing.VContainer
         public override void Install(IContainerBuilder builder)
         {
             builder.RegisterInstance(_pauseButtonView).AsImplementedInterfaces();
-            
             builder.Register<PauseController>(Lifetime.Singleton).AsImplementedInterfaces();
-            
             builder.RegisterEntryPoint<PauseButtonPresenter>();
         }
     }

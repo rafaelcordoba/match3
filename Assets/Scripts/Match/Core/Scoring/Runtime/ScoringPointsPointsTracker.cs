@@ -1,7 +1,6 @@
 using System;
 using Match.Core.Matching;
 using Match.Core.Scoring.Configuration;
-using UnityEngine;
 using VContainer.Unity;
 
 namespace Match.Core.Scoring

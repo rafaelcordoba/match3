@@ -8,9 +8,7 @@ namespace Match.Core.Matching
         private readonly IGrid<Tile> _grid;
 
         public CascadeController(IGrid<Tile> grid)
-        {
-            _grid = grid;
-        }
+            => _grid = grid;
 
         public void Cascade()
         {
@@ -21,20 +19,24 @@ namespace Match.Core.Matching
                 var tile = _grid.GetItem(position);
                 if (tile == null || tile.Destroyed) 
                     continue;
-                
-                var downY = y;
-                while (downY > 0)
-                {
-                    downY--;
-                    var downPosition = new GridPosition(x, downY);
-                    var tileDown = _grid.GetItem(downPosition);
-                    if (tileDown != null)
-                        break;
+                MoveTileDown(y, x, tile);
+            }
+        }
 
-                    _grid.SetItem(tile.GridPosition, null);
-                    tile.GridPosition = downPosition;
-                    _grid.SetItem(downPosition, tile);
-                }
+        private void MoveTileDown(uint y, uint x, Tile tile)
+        {
+            var downY = y;
+            while (downY > 0)
+            {
+                downY--;
+                var downPosition = new GridPosition(x, downY);
+                var tileDown = _grid.GetItem(downPosition);
+                if (tileDown != null)
+                    break;
+
+                _grid.SetItem(tile.GridPosition, null);
+                tile.GridPosition = downPosition;
+                _grid.SetItem(downPosition, tile);
             }
         }
     }

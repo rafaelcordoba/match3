@@ -34,9 +34,7 @@ namespace Match.Core.Board.Switcher
         }
 
         public void SwitchBack(SwitcherResult switcherResult)
-        {
-            SwitchTiles(switcherResult.OriginTile, switcherResult.NeighbourTile);
-        }
+            => SwitchTiles(switcherResult.OriginTile, switcherResult.NeighbourTile);
 
         private Tile GetNeighbourTile(SwipeDirection swipeDirection, GridPosition originPosition)
         {

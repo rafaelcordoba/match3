@@ -32,13 +32,9 @@ namespace Match.Core.Scoring.UI
         }
 
         private void OnPointsChanged(int points)
-        {
-            _scoringView.SetPoints(points);
-        }
+            => _scoringView.SetPoints(points);
 
         private void OnTimeRemainingChanged(int timeRemaining)
-        {
-            _scoringView.SetCountdown(timeRemaining);    
-        }
+            => _scoringView.SetCountdown(timeRemaining);
     }
 }

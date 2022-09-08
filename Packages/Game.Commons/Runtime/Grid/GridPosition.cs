@@ -16,8 +16,6 @@ namespace Game.Commons.Grid
         }
 
         public override string ToString()
-        {
-            return $"GridPosition: X:{X} Y:{Y}";
-        }
+            => $"GridPosition: X:{X} Y:{Y}";
     }
 }

@@ -12,9 +12,7 @@ namespace Match.Popups
         private readonly Dictionary<PopupType, IPopupView> _openedPopups = new();
 
         public PopupController(IUIController uiController)
-        {
-            _uiController = uiController;
-        }
+            => _uiController = uiController;
 
         public void OpenPopup(PopupType popupType, IDictionary<string, object> context)
         {
@@ -28,9 +26,7 @@ namespace Match.Popups
         }
         
         public void OpenPopup(PopupType popupType)
-        {
-            OpenPopup(popupType, new Dictionary<string, object>());
-        }
+            => OpenPopup(popupType, new Dictionary<string, object>());
 
         public void ClosePopup(PopupType popupType)
         {

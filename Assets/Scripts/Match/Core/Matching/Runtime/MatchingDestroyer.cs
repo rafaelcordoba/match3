@@ -1,6 +1,6 @@
 using System;
+using System.Collections.Generic;
 using Game.Commons.Grid;
-using Match.Core.Matching.Strategies;
 using Match.Core.Tiles;
 
 namespace Match.Core.Matching
@@ -23,16 +23,19 @@ namespace Match.Core.Matching
             var matchingTiles = _matcher.Get(origin);
             if (matchingTiles.Count == 0)
                 return 0;
-            
+            var tilesDestroyed = DestroyTiles(matchingTiles);
+            TilesDestroyed?.Invoke(tilesDestroyed);
+            return tilesDestroyed;
+        }
+
+        private int DestroyTiles(IReadOnlyCollection<Tile> matchingTiles)
+        {
             foreach (var tile in matchingTiles)
             {
                 tile.Destroyed = true;
                 _grid.SetItem(tile.GridPosition, null);
             }
-
-            var tilesDestroyed = matchingTiles.Count;
-            TilesDestroyed?.Invoke(tilesDestroyed);
-            return tilesDestroyed;
+            return matchingTiles.Count;
         }
     }
 }

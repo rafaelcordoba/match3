@@ -9,13 +9,9 @@ namespace Match.Core.Scoring.UI
         [SerializeField] private TextMeshProUGUI _countdown;
 
         public void SetPoints(int points)
-        {
-            _pointsText.text = $"{points:n0}";
-        }
+            => _pointsText.text = $"{points:n0}";
 
         public void SetCountdown(int countdown)
-        {
-            _countdown.text = $"{countdown:n0}";
-        }
+            => _countdown.text = $"{countdown:n0}";
     }
 }

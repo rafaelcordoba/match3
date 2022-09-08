@@ -13,10 +13,10 @@ namespace Match.Core.Tiles.UI
 
         private TileViewState _state = TileViewState.Inactive;
         private float _dyingTimePassed;
+        private float _tileSize;
         
         public Tile Tile { get; set; }
         public GraphicView GraphicView { get; set; }
-        public float TileSize { get; set; }
         public ITilePoolController PoolController { get; set; }
 
         public void SetActive(bool isActive)
@@ -27,11 +27,14 @@ namespace Match.Core.Tiles.UI
 
         public void SetParent(Transform parent)
             => transform.parent = parent;
+        
+        public void SetTileSize(float tileSize)
+            => _tileSize = tileSize;
 
         public void SetLocalPosition(GridPosition gridPosition)
         {
             var tilePosition = new Vector3(gridPosition.X, gridPosition.Y);
-            var targetPosition = tilePosition * TileSize;
+            var targetPosition = tilePosition * _tileSize;
             transform.localPosition = targetPosition;
         }
 
@@ -69,7 +72,7 @@ namespace Match.Core.Tiles.UI
             GraphicView.Splash.SetActive(false);
             
             var tilePosition = new Vector3(Tile.GridPosition.X, Tile.GridPosition.Y);
-            var targetPosition = tilePosition * TileSize;
+            var targetPosition = tilePosition * _tileSize;
             var currentPosition = transform.localPosition;
             var moveDirection = targetPosition - currentPosition;
             currentPosition += moveDirection * (_moveSpeed * Time.deltaTime);

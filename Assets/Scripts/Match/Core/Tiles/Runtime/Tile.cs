@@ -13,8 +13,6 @@ namespace Match.Core.Tiles
         [field: SerializeField] public bool Refilled { get; set; }
 
         public override string ToString()
-        {
-            return $"Type: {TileType} X: {GridPosition.X} Y:{GridPosition.Y}";
-        }
+            => $"Type: {TileType} X: {GridPosition.X} Y:{GridPosition.Y}";
     }
 }

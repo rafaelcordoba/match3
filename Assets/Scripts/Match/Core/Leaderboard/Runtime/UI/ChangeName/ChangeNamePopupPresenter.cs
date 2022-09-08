@@ -30,9 +30,7 @@ namespace Match.Core.Leaderboard.UI.ChangeName
         }
 
         public void Dispose()
-        {
-            _view.SaveButtonClicked -= OnSaveButtonClicked;
-        }
+            => _view.SaveButtonClicked -= OnSaveButtonClicked;
 
         private void OnSaveButtonClicked(string input)
         {

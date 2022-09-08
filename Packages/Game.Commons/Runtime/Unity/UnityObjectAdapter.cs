@@ -8,18 +8,14 @@ namespace Game.Commons.Unity
             T original, 
             Transform parent) 
             where T : Object
-        {
-            return Object.Instantiate(original, parent);
-        }
+            => Object.Instantiate(original, parent);
 
         public T Instantiate<T>(
             T original, 
             Transform parent, 
             bool worldPositionStays) 
             where T : Object
-        {
-            return Object.Instantiate(original, parent, worldPositionStays);
-        }
+            => Object.Instantiate(original, parent, worldPositionStays);
 
         public T Instantiate<T>(
             T original,
@@ -27,13 +23,9 @@ namespace Game.Commons.Unity
             Quaternion rotation,
             Transform parent)
             where T : Object
-        {
-            return Object.Instantiate(original, position, rotation, parent);
-        }
+            => Object.Instantiate(original, position, rotation, parent);
 
         public void Destroy(Object obj)
-        {
-            Object.Destroy(obj);
-        }
+            => Object.Destroy(obj);
     }
 }

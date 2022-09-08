@@ -25,19 +25,13 @@ namespace Match.Core.Leaderboard.UI
         }
 
         public void SetPlayerNameText(string playerName)
-        {
-            _playerName.text = playerName;
-        }
+            => _playerName.text = playerName;
 
         public void SetLeaderboardText(string leaderboard)
-        {
-            _leaderboard.text = leaderboard;
-        }
+            => _leaderboard.text = leaderboard;
 
         public void SetCloseButtonVisibility(bool isVisible)
-        {
-            _closeButton.gameObject.SetActive(isVisible);
-        }
+            => _closeButton.gameObject.SetActive(isVisible);
 
         protected override void OnDestroy()
         {

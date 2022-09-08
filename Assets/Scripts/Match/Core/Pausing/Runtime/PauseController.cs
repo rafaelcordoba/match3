@@ -8,9 +8,7 @@ namespace Match.Core.Pausing
         private readonly ITouchInputController _touchInputController;
 
         public PauseController(ITouchInputController touchInputController)
-        {
-            _touchInputController = touchInputController;
-        }
+            => _touchInputController = touchInputController;
 
         public void Pause()
         {

@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Game.Commons.Grid;
 using Game.Commons.System.Random;
@@ -41,18 +40,14 @@ namespace Match.Core.Grid
         }
 
         private bool HasMatchAround(Tile origin)
-        {
-            return _matcher.Get(origin).Count > 0;
-        }
+            => _matcher.Get(origin).Count > 0;
 
         private Tile CreateRandomTile(GridPosition gridPosition)
-        {
-            return new Tile
+            => new()
             {
                 TileType = GetRandomType(),
                 GridPosition = gridPosition
             };
-        }
 
         private TileType GetRandomType()
         {

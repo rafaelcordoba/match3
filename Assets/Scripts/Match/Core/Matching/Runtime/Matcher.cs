@@ -22,15 +22,20 @@ namespace Match.Core.Matching
         public IReadOnlyList<Tile> Get(Tile origin)
         {
             var tilesToDestroy = new List<Tile>();
-            foreach (var strategy in _matchingStrategies)
+            foreach (var strategy in _matchingStrategies) 
+                AddMatchesToDestroy(origin, strategy, tilesToDestroy);
+            return tilesToDestroy
+                .Distinct()
+                .ToList();
+        }
+
+        private void AddMatchesToDestroy(Tile origin, IMatchingStrategy strategy, List<Tile> tilesToDestroy)
+        {
+            var matches = strategy.GetMatches(origin);
+            if (matches.Count >= _configuration.RequiredToMatch)
             {
-                var matches = strategy.GetMatches(origin);
-                if (matches.Count >= _configuration.RequiredToMatch)
-                {
-                    tilesToDestroy.AddRange(matches);
-                }
+                tilesToDestroy.AddRange(matches);
             }
-            return tilesToDestroy.Distinct().ToList();
         }
     }
 }

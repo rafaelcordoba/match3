@@ -16,9 +16,7 @@ namespace Match.Core.Scoring
         private bool _timerEndedSent;
 
         public ScoringTimerTracker(IScoringConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
+            => _configuration = configuration;
 
         public void ResetTimer()
         {

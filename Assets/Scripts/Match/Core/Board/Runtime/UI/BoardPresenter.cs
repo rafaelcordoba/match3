@@ -43,8 +43,8 @@ namespace Match.Core.Board.UI
             var tile = _grid.GetItem(gridPosition);
             var tileView = _pool.Get(tile.TileType);
             tileView.Tile = tile;
-            tileView.TileSize = _gridConfiguration.TileSize;
             tileView.PoolController = _pool;
+            tileView.SetTileSize(_gridConfiguration.TileSize);
             tileView.SetParent(_tilesContainer.transform);
             tileView.SetActive(true);
             tileView.SetState(TileViewState.Alive);

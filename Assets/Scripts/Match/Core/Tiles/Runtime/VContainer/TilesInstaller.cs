@@ -4,7 +4,6 @@ using Match.Core.Tiles.Configuration;
 using Match.Core.Tiles.UI;
 using UnityEngine;
 using VContainer;
-using VContainer.Unity;
 
 namespace Match.Core.Tiles.VContainer
 {
