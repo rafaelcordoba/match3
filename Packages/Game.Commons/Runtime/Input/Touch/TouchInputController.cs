@@ -54,18 +54,6 @@ namespace Game.Commons.Input.Touch
         private void ContactStarted(InputAction.CallbackContext context)
         {
             var screenPosition = _position.ReadValue<Vector2>();
-            
-#if UNITY_EDITOR
-            if (screenPosition == Vector2.zero)
-            {
-                // prevent unity editor to send input
-                // when focusing on game view for the first time
-                // because the Vector2 will be (0, 0) on Started
-                _blockingInput = true;
-                return; 
-            }
-#endif
-            
             var touchInputInfo = CreateTouchInputInfo(screenPosition, context.time);
             TouchStart?.Invoke(touchInputInfo);
             _blockingInput = false;
