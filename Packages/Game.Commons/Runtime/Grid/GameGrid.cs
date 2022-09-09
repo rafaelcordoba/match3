@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.Commons.Grid
 {
-    public class Grid<TItem> : IGrid<TItem>
+    public class GameGrid<TItem> : IGrid<TItem>
     {
         public uint Width { get; private set; }
         public uint Height { get; private set; }

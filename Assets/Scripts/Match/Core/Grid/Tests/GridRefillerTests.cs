@@ -51,9 +51,9 @@ namespace Match.Core.Grid.Tests
             _grid.GetItem(new GridPosition(1, 1)).Refilled.Should().Be(false);
         }
 
-        private static Grid<Tile> CreateFakeGrid()
+        private static GameGrid<Tile> CreateFakeGrid()
         {
-            var grid = new Grid<Tile>();
+            var grid = new GameGrid<Tile>();
             grid.Init(2, 2, 1);
             grid.SetItem(new GridPosition(0, 0), _yellow);
             grid.SetItem(new GridPosition(0, 1), null);

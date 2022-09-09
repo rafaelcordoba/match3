@@ -41,9 +41,9 @@ namespace Match.Core.Grid.Tests
             _grid.GetItem(new GridPosition(1, 1)).Should().Be(_yellow);
         }
         
-        private static Grid<Tile> CreateFakeGrid()
+        private static GameGrid<Tile> CreateFakeGrid()
         {
-            var grid = new Grid<Tile>();
+            var grid = new GameGrid<Tile>();
             grid.Init(2, 2, 1);
             return grid;
         }

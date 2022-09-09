@@ -19,7 +19,7 @@ namespace Match.Core.Tiles.VContainer
             builder.Register<TilePoolController>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<TileViewFactory>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<AvailableTilesRepository>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<Grid<Tile>>(Lifetime.Singleton).As<IGrid<Tile>>();
+            builder.Register<GameGrid<Tile>>(Lifetime.Singleton).As<IGrid<Tile>>();
         }
     }
 }
