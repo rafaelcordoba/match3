@@ -45,11 +45,11 @@ namespace Match.Core.Grid
         private Tile CreateRandomTile(GridPosition gridPosition)
             => new()
             {
-                TileType = GetRandomType(),
+                TileColor = GetRandomType(),
                 GridPosition = gridPosition
             };
 
-        private TileType GetRandomType()
+        private TileColor GetRandomType()
         {
             var tiles = _availableTilesRepository.Get().ToList();
             var randomIndex = _randomAdapter.Next(tiles.Count);

@@ -4,6 +4,6 @@ namespace Match.Core.Tiles
 {
     public interface IAvailableTilesRepository
     {
-        IEnumerable<TileType> Get();
+        IEnumerable<TileColor> Get();
     }
 }

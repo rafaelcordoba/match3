@@ -4,7 +4,7 @@ namespace Match.Core.Tiles
 {
     public interface ITileGraphicsProvider
     {
-        GraphicView GetGraphicPrefab(TileType tileType);
+        GraphicView GetGraphicPrefab(TileColor tileColor);
         TileView GetTileViewPrefab();
     }
 }

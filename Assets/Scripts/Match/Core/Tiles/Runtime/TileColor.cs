@@ -3,7 +3,7 @@ using System;
 namespace Match.Core.Tiles
 {
     [Serializable]
-    public enum TileType
+    public enum TileColor
     {
         Red,
         Green,

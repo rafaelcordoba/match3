@@ -4,8 +4,8 @@ namespace Match.Core.Tiles
 {
     public interface ITilePoolController
     {
-        void InitializePool(TileType tileType);
-        ITileView Get(TileType tileType);
+        void InitializePool(TileColor tileColor);
+        ITileView Get(TileColor tileColor);
         void Return(ITileView tileView);
     }
 }

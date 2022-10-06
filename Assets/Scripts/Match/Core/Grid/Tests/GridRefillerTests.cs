@@ -18,8 +18,8 @@ namespace Match.Core.Grid.Tests
         [SetUp]
         public void SetUp()
         {
-            _yellow = new Tile { TileType = TileType.Yellow };
-            _green = new Tile { TileType = TileType.Green };
+            _yellow = new Tile { TileColor = TileColor.Yellow };
+            _green = new Tile { TileColor = TileColor.Green };
             _grid = CreateFakeGrid();
             _randomTileFactory = Substitute.For<IRandomTileFactory>();
             _refiller = new GridRefiller(_grid, _randomTileFactory);

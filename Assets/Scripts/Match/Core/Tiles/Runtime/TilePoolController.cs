@@ -11,8 +11,8 @@ namespace Match.Core.Tiles
     {
         private readonly ITileViewFactory _tileViewFactory;
         private readonly ITilesConfiguration _tilesConfiguration;
-        private readonly CustomStack<TileType, ITileView> _customStack = new();
-        private readonly Dictionary<TileType, Transform> _poolContainers = new();
+        private readonly CustomStack<TileColor, ITileView> _customStack = new();
+        private readonly Dictionary<TileColor, Transform> _poolContainers = new();
 
         public TilePoolController(ITileViewFactory tileViewFactory, ITilesConfiguration tilesConfiguration)
         {
@@ -20,40 +20,40 @@ namespace Match.Core.Tiles
             _tilesConfiguration = tilesConfiguration;
         }
 
-        public void InitializePool(TileType tileType)
+        public void InitializePool(TileColor tileColor)
         {
-            ValidateStack(tileType);
-            var poolTransform = new GameObject($"Pool Container {tileType}").transform;
-            _poolContainers.Add(tileType, poolTransform);
+            ValidateStack(tileColor);
+            var poolTransform = new GameObject($"Pool Container {tileColor}").transform;
+            _poolContainers.Add(tileColor, poolTransform);
             for (var i = 0; i < _tilesConfiguration.PoolSize; i++)
             {
-                CreateAndPushView(tileType);
+                CreateAndPushView(tileColor);
             }
         }
 
-        public ITileView Get(TileType tileType)
+        public ITileView Get(TileColor tileColor)
         {
-            if (_customStack.Count(tileType) < 1)
-                _customStack.Push(tileType, _tileViewFactory.Create(tileType, _poolContainers[tileType]));
-            return _customStack.Pop(tileType);
+            if (_customStack.Count(tileColor) < 1)
+                _customStack.Push(tileColor, _tileViewFactory.Create(tileColor, _poolContainers[tileColor]));
+            return _customStack.Pop(tileColor);
         }
 
         public void Return(ITileView tileView)
         {
-            tileView.SetParent(_poolContainers[tileView.Tile.TileType]);
-            _customStack.Push(tileView.Tile.TileType, tileView);
+            tileView.SetParent(_poolContainers[tileView.Tile.TileColor]);
+            _customStack.Push(tileView.Tile.TileColor, tileView);
         }
 
-        private void CreateAndPushView(TileType tileType)
+        private void CreateAndPushView(TileColor tileColor)
         {
-            var tileView = _tileViewFactory.Create(tileType, _poolContainers[tileType]);
-            _customStack.Push(tileType, tileView);
+            var tileView = _tileViewFactory.Create(tileColor, _poolContainers[tileColor]);
+            _customStack.Push(tileColor, tileView);
         }
 
-        private void ValidateStack(TileType tileType)
+        private void ValidateStack(TileColor tileColor)
         {
-            if (_customStack.Count(tileType) > 0)
-                throw new Exception($"Pool already initialized: {tileType}");
+            if (_customStack.Count(tileColor) > 0)
+                throw new Exception($"Pool already initialized: {tileColor}");
         }
     }
 }

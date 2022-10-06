@@ -11,7 +11,7 @@ namespace Match.Core.Tiles
         public AvailableTilesRepository(ITilesConfiguration configuration)
             => _configuration = configuration;
 
-        public IEnumerable<TileType> Get()
-            => _configuration.TilePrefabs.Select(c => c.Type);
+        public IEnumerable<TileColor> Get()
+            => _configuration.TilePrefabs.Select(c => c.color);
     }
 }

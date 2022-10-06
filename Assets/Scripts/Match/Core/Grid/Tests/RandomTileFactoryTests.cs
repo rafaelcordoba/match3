@@ -25,7 +25,7 @@ namespace Match.Core.Grid.Tests
             _randomAdapter = Substitute.For<IRandomAdapter>();
             
             _availableTilesRepository = Substitute.For<IAvailableTilesRepository>();
-            _availableTilesRepository.Get().Returns(new List<TileType> { TileType.Red, TileType.Green });
+            _availableTilesRepository.Get().Returns(new List<TileColor> { TileColor.Red, TileColor.Green });
             
             _matcher = Substitute.For<IMatcher>();
             _matcher.Get(Arg.Any<Tile>()).Returns(Substitute.For<IReadOnlyList<Tile>>());
@@ -41,7 +41,7 @@ namespace Match.Core.Grid.Tests
 
             var result = _randomTileFactory.Create(gridPosition);
 
-            result.TileType.Should().Be(TileType.Red);
+            result.TileColor.Should().Be(TileColor.Red);
             result.GridPosition.Should().BeEquivalentTo(gridPosition);
         }
         
@@ -53,7 +53,7 @@ namespace Match.Core.Grid.Tests
 
             var result = _randomTileFactory.Create(gridPosition);
 
-            result.TileType.Should().Be(TileType.Green);
+            result.TileColor.Should().Be(TileColor.Green);
             result.GridPosition.Should().BeEquivalentTo(gridPosition);
         }
     }

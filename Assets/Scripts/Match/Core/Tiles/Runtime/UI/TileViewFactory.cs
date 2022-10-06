@@ -13,11 +13,11 @@ namespace Match.Core.Tiles.UI
             _prefab = _graphicsProvider.GetTileViewPrefab();
         }
         
-        public ITileView Create(TileType tileType, Transform parent)
+        public ITileView Create(TileColor tileColor, Transform parent)
         {
             var tileView = Object.Instantiate(_prefab, parent);
             tileView.SetActive(false);
-            var graphicPrefab = _graphicsProvider.GetGraphicPrefab(tileType);
+            var graphicPrefab = _graphicsProvider.GetGraphicPrefab(tileColor);
             tileView.GraphicView = Object.Instantiate(graphicPrefab, tileView.transform); 
             return tileView;
         }

@@ -29,7 +29,7 @@ namespace Match.Core.Matching.Strategies
                 searchY--;
                 var gridPosition = new GridPosition(origin.GridPosition.X, searchY);
                 var neighbour = _grid.GetItem(gridPosition);
-                if (neighbour == null || neighbour.TileType != origin.TileType)
+                if (neighbour == null || neighbour.TileColor != origin.TileColor)
                     break;
                 matchingTiles.Add(neighbour);
             }
@@ -43,7 +43,7 @@ namespace Match.Core.Matching.Strategies
                 searchY++;
                 var gridPosition = new GridPosition(origin.GridPosition.X, searchY);
                 var neighbour = _grid.GetItem(gridPosition);
-                if (neighbour == null || neighbour.TileType != origin.TileType)
+                if (neighbour == null || neighbour.TileColor != origin.TileColor)
                     break;
                 matchingTiles.Add(neighbour);
             }

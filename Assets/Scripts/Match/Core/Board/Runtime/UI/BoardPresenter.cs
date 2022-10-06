@@ -41,7 +41,7 @@ namespace Match.Core.Board.UI
         private ITileView CreateTileView(GridPosition gridPosition)
         {
             var tile = _grid.GetItem(gridPosition);
-            var tileView = _pool.Get(tile.TileType);
+            var tileView = _pool.Get(tile.TileColor);
             tileView.Tile = tile;
             tileView.PoolController = _pool;
             tileView.SetTileSize(_gridConfiguration.TileSize);
