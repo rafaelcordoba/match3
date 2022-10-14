@@ -8,7 +8,7 @@ namespace Match.Core.Grid
 {
     public class RandomTileFactory : IRandomTileFactory
     {
-        private const int MAX_ATTEMPTS = 100;
+        private const int MAX_ATTEMPTS = 1;
         
         private readonly IRandomAdapter _randomAdapter;
         private readonly IAvailableTilesRepository _availableTilesRepository;

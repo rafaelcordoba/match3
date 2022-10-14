@@ -67,9 +67,15 @@ namespace Match.Core.Board
                 yield return SwitchBack(switcherResult);
                 yield break;
             }
+            
+            // TODO: create a special tile before cascading
+            // add bomb to the grid...
 
             _touchInputController.Disable();
             yield return Cascading();
+            
+            // Fix shuffle board if needed 
+            
             _touchInputController.Enable();
          
             FlowInProgress = false;

@@ -7,7 +7,7 @@ namespace Match.Core.Tiles.Configuration
     [Serializable]
     public class TileGraphicPrefab
     {
-        [FormerlySerializedAs("Type")] public TileColor color;
+        public TileColor color;
         public GraphicView Graphic;
     }
 }
