@@ -1,0 +1,21 @@
+{
+    "name": "Match.Presentation",
+    "rootNamespace": "",
+    "references": [
+        "VContainer",
+        "Match.Application",
+        "Unity.TextMeshPro",
+        "Match.Popups",
+        "UniTask",
+        "Game.Commons"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

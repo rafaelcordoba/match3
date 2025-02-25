@@ -1,0 +1,25 @@
+{
+    "name": "Match.Application.Tests",
+    "rootNamespace": "",
+    "references": [
+        "VContainer",
+        "Match.Application",
+        "Game.Commons",
+        "BoundfoxStudios.FluentAssertions",
+        "TNRD.NSubstitute",
+        "UniTask"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

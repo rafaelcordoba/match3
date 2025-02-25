@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d51112a3f3b4ac7847caf1afb437505, type: 3}
+  m_Name: TilesConfiguration
+  m_EditorClassIdentifier: 
+  <TilePrefabs>k__BackingField:
+  - Type: 0
+    Graphic: {fileID: 7551716298786975879, guid: dba3b242bf2a24469a701ba6a309e1fe, type: 3}
+  - Type: 1
+    Graphic: {fileID: 96453688741622721, guid: d212ab303bb9342b0808e38ae2c2b415, type: 3}
+  - Type: 2
+    Graphic: {fileID: 4544030124579966927, guid: 9feb6de7c243b4edd801999d284b72b8, type: 3}
+  - Type: 3
+    Graphic: {fileID: -5120519179769718521, guid: 8ea54963e9e2b4e11a0ae3a37694ce96, type: 3}
+  - Type: 4
+    Graphic: {fileID: -2973286440344952384, guid: d179e960af8de47d9ae29b74e1013b11, type: 3}
+  <TileViewPrefab>k__BackingField: {fileID: 8368032160655473865, guid: c80888e0f1d0c42a88a74ba636ae19a4, type: 3}
+  <PoolSize>k__BackingField: 20
