@@ -53,7 +53,7 @@
   - Check for player name
 ---
 ### Unit testing
-- There are some tests at `Match.Core.Grid.Tests`
+- There are some tests at `Match.Application.Tests`
   - `GridInitializerTests.cs`
   - `GridRefillerTests.cs`
   - `NoMatchAroundTileFactoryTests.cs`
