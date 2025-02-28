@@ -19,7 +19,7 @@
     - This could be adapted to run on a server if needed
   - Presentation is decoupled from the application
   - Infrastructure holds the implementation of the interfaces defined in the application
-    - They use ScriptableObjects and Playable at the moment, but could be replaced by a real server and JSON configurations
+    - They use ScriptableObjects at the moment, but could be replaced by a real server and JSON configurations
 - The code is separated in different modules using `.asmdef`
 - You can inspect what projects depend on each other in each `.asmdef` at the `references[]`
 ---
